@@ -7,9 +7,17 @@ dotenv.config({
     path:'.env'
 });
 
-connectDB();
+connectDB()
+//adding promises after connecting to database it will call two fuctions
 
-
+.then(()=>{
+    app.listen(process.env.PORT || 8000,()=>{
+        console.log(`Server is running at :${process.env.PORT}`);
+    })
+})
+.catch((err)=>{
+    console.log("MongoDB connection failed !!!",err);
+})
 // import express from "express"
 // const app = express()
 // ;( async() => {
