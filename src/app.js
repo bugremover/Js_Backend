@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-
+// main express app that connects frontend and backend
 
 const app = express();
 //when were we are using middleware or config packages
